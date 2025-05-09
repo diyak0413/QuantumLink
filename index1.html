@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuantumLink | TKS Innovates Moonshot Initiative</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'quantum-blue': '#00f0ff',
+                        'quantum-purple': '#b400ff',
+                        'quantum-green': '#00ff9d',
+                        'dark-space': '#0a0a1a',
+                        'deep-space': '#050510'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #050510;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+        
+        .glow-text-blue {
+            text-shadow: 0 0 10px rgba(0, 240, 255, 0.7);
+        }
+        
+        .glow-text-purple {
+            text-shadow: 0 0 10px rgba(180, 0, 255, 0.7);
+        }
+        
+        .glow-text-green {
+            text-shadow: 0 0 10px rgba(0, 255, 157, 0.7);
+        }
+        
+        .glow-box-blue {
+            box-shadow: 0 0 15px rgba(0, 240, 255, 0.5);
+        }
+        
+        .glow-box-purple {
+            box-shadow: 0 0 15px rgba(180, 0, 255, 0.5);
+        }
+        
+        .glow-box-green {
+            box-shadow: 0 0 15px rgba(0, 255, 157, 0.5);
+        }
+        
+        .quantum-node {
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: #00f0ff;
+            box-shadow: 0 0 15px #00f0ff;
+            z-index: -1;
+        }
+        
+        .quantum-connection {
+            position: absolute;
+            height: 1px;
+            background: linear-gradient(90deg, rgba(0, 240, 255, 0.5), transparent);
+            z-index: -1;
+            transform-origin: 0 0;
+        }
+        
+        .section-divider {
+            height: 150px;
+            overflow: hidden;
+        }
+        
+        .section-divider svg {
+            height: 100%;
+            width: 100%;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: #00f0ff;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 1; }
+            100% { transform: scale(3); opacity: 0; }
+        }
+        
+        @keyframes wave {
+            0% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(2); opacity: 0.5; }
+            100% { transform: scale(3); opacity: 0; }
+        }
+    </style>
+</head>
+<body class="relative">
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-black bg-opacity-80 backdrop-blur-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex-shrink-0 flex items-center">
+                    <span class="text-2xl font-bold glow-text-blue">QUANTUM <span class="glow-text-purple">LINK</span></span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#home" class="nav-link px-3 py-2 text-sm font-medium text-white hover:text-quantum-blue">Home</a>
+                        <a href="#about" class="nav-link px-3 py-2 text-sm font-medium text-white hover:text-quantum-purple">About</a>
+                        <a href="#technology" class="nav-link px-3 py-2 text-sm font-medium text-white hover:text-quantum-green">Technology</a>
+                        <a href="#team" class="nav-link px-3 py-2 text-sm font-medium text-white hover:text-quantum-blue">Team</a>
+                        <a href="#contact" class="nav-link px-3 py-2 text-sm font-medium text-white hover:text-quantum-purple">Contact</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32">
+            <div class="text-center">
+                <h1 class="text-5xl md:text-7xl font-bold mb-6">
+                    <span class="glow-text-blue">Welcome to QuantumLink:</span> 
+                    <span class="glow-text-purple">The Future of Networked Quantum Computing</span> 
+                    <span class="block mt-4 glow-text-green">Amplify power. Unite qubits. Solve the unsolvable.</span>
+                </h1>
+                <p class="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto mb-12">
+                    Transforming isolated quantum computers into a unified network of unprecedented power.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="#about" class="px-8 py-4 bg-gradient-to-r from-quantum-blue to-quantum-purple text-white font-semibold rounded-full glow-box-blue hover:opacity-90 transition duration-300 transform hover:scale-105">
+                        Learn More
+                    </a>
+                    <a href="#technology" class="px-8 py-4 border-2 border-quantum-green text-white font-semibold rounded-full glow-box-green hover:bg-quantum-green hover:bg-opacity-10 transition duration-300 transform hover:scale-105">
+                        See How It Works
+                    </a>
+                    <a href="#team" class="px-8 py-4 border-2 border-quantum-blue text-white font-semibold rounded-full glow-box-blue hover:bg-quantum-blue hover:bg-opacity-10 transition duration-300 transform hover:scale-105">
+                        Meet the Team
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gradient-to-b from-[#0a0a1a] to-[#0a0a2a] relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-20">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4 glow-text-purple">About QuantumLink</h2>
+                <div class="w-24 h-1 bg-quantum-purple mx-auto mb-6 glow-box-purple"></div>
+                <p class="text-xl text-gray-300 max-w-4xl mx-auto">
+                    Quantum computing's next great leap - connecting multiple quantum computers into a cohesive network.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="relative">
+                    <div class="relative z-10 p-8 bg-black bg-opacity-50 rounded-xl border border-gray-800 backdrop-blur-sm">
+                        <h3 class="text-2xl font-bold mb-4 text-quantum-blue">The Problem</h3>
+                        <p class="text-gray-300 mb-6">
+                            Today's quantum computers operate in isolation, limited by qubit counts and instability. They're powerful but constrained.
+                        </p>
+                        <p class="text-gray-300 mb-6">
+                            QuantumLink solves this by creating a network that combines the strengths of multiple quantum computers.
+                        </p>
+                        <div class="flex items-center">
+                            <div class="mr-4 text-quantum-green text-2xl">
+                                <i class="fas fa-network-wired"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white">Quantum Network</h4>
+                                <p class="text-gray-400">Connecting quantum computers worldwide</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="relative">
+                    <div class="relative z-10 p-8 bg-black bg-opacity-50 rounded-xl border border-gray-800 backdrop-blur-sm">
+                        <h3 class="text-2xl font-bold mb-4 text-quantum-green">Our Solution</h3>
+                        <p class="text-gray-300 mb-6">
+                            QuantumLink intelligently partitions large-scale quantum algorithms into smaller tasks and distributes them across multiple devices.
+                        </p>
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <span class="text-quantum-blue mr-3 mt-1">•</span>
+                                <span class="text-gray-300">Harnesses quantum parallelism</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-quantum-purple mr-3 mt-1">•</span>
+                                <span class="text-gray-300">Optimizes for hardware strengths</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-quantum-green mr-3 mt-1">•</span>
+                                <span class="text-gray-300">Enhances stability and accuracy</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Technology Section -->
+    <section id="technology" class="py-20 bg-[#0a0a2a] relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-20">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4 glow-text-green">The Quantum Mesh Network</h2>
+                <div class="w-24 h-1 bg-quantum-green mx-auto mb-6 glow-box-green"></div>
+                <p class="text-xl text-gray-300 max-w-4xl mx-auto">
+                    How QuantumLink transforms isolated quantum computers into a powerful network
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-4 gap-8">
+                <!-- Feature 1 -->
+                <div class="feature-card p-8 bg-black bg-opacity-50 rounded-xl border border-gray-800 backdrop-blur-sm hover:border-quantum-blue transition duration-300">
+                    <div class="text-quantum-blue text-4xl mb-6">
+                        <i class="fas fa-tasks"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-white">Parallel Processing</h3>
+                    <p class="text-gray-300">
+                        Split complex quantum algorithms into smaller tasks processed in parallel across multiple devices
+                    </p>
+                </div>
+                
+                <!-- Feature 2 -->
+                <div class="feature-card p-8 bg-black bg-opacity-50 rounded-xl border border-gray-800 backdrop-blur-sm hover:border-quantum-purple transition duration-300">
+                    <div class="text-quantum-purple text-4xl mb-6">
+                        <i class="fas fa-microchip"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-white">Hardware-Agnostic</h3>
+                    <p class="text-gray-300">
+                        Works seamlessly across different quantum systems (annealers, simulators, etc.)
+                    </p>
+                </div>
+                
+                <!-- Feature 3 -->
+                <div class="feature-card p-8 bg-black bg-opacity-50 rounded-xl border border-gray-800 backdrop-blur-sm hover:border-quantum-green transition duration-300">
+                    <div class="text-quantum-green text-4xl mb-6">
+                        <i class="fas fa-route"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-white">Optimized Routing</h3>
+                    <p class="text-gray-300">
+                        Sends tasks to devices best suited for each function, maximizing efficiency
+                    </p>
+                </div>
+                
+                <!-- Feature 4 -->
+                <div class="feature-card p-8 bg-black bg-opacity-50 rounded-xl border border-gray-800 backdrop-blur-sm hover:border-quantum-blue transition duration-300">
+                    <div class="text-quantum-blue text-4xl mb-6">
+                        <i class="fas fa-sync"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-white">Error Correction & Syncing</h3>
+                    <p class="text-gray-300">
+                        Maintains quantum state, entanglement, and coordination across devices
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Team Section -->
+    <section id="team" class="py-20 bg-gradient-to-b from-[#0a0a1a] to-[#0a0a2a] relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-20">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4 glow-text-blue">Built by TKS Innovators</h2>
+                <div class="w-24 h-1 bg-quantum-blue mx-auto mb-6 glow-box-blue"></div>
+                <p class="text-xl text-gray-300 max-w-4xl mx-auto">
+                    Meet the passionate innovators behind QuantumLink
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-4 gap-8">
+                <!-- Team Member 1 -->
+                <div class="feature-card p-8 bg-black bg-opacity-50 rounded-xl border border-gray-800 backdrop-blur-sm hover:border-quantum-purple transition duration-300">
+                    <div class="text-center mb-6">
+                        <div class="w-24 h-24 rounded-full bg-gray-800 mx-auto mb-4"></div>
+                        <h3 class="text-xl font-bold text-white">Diya Kondapalli</h3>
+                        <p class="text-gray-400">Quantum Research Lead</p>
+                    </div>
+                    <p class="text-gray-300 text-center">
+                        Passionate about quantum computing and network optimization
+                    </p>
+                </div>
+                
+                <!-- Team Member 2 -->
+                <div class="feature-card p-8 bg-black bg-opacity-50 rounded-xl border border-gray-800 backdrop-blur-sm hover:border-quantum-green transition duration-300">
+                    <div class="text-center mb-6">
+                        <div class="w-24 h-24 rounded-full bg-gray-800 mx-auto mb-4"></div>
+                        <h3 class="text-xl font-bold text-white">Ayman Oumamass</h3>
+                        <p class="text-gray-400">Software Architect</p>
+                    </div>
+                    <p class="text-gray-300 text-center">
+                        Expert in distributed systems and quantum algorithms
+                    </p>
+                </div>
+                
+                <!-- Team Member 3 -->
+                <div class="feature-card p-8 bg-black bg-opacity-50 rounded-xl border border-gray-800 backdrop-blur-sm hover:border-quantum-blue transition duration-300">
+                    <div class="text-center mb-6">
+                        <div class="w-24 h-24 rounded-full bg-gray-800 mx-auto mb-4"></div>
+                        <h3 class="text-xl font-bold text-white">Max Blanksby</h3>
+                        <p class="text-gray-400">Outreach & Partnerships</p>
+                    </div>
+                    <p class="text-gray-300 text-center">
+                        Building connections between quantum research and industry
+                    </p>
+                </div>
+                
+                <!-- Team Member 4 -->
+                <div class="feature-card p-8 bg-black bg-opacity-50 rounded-xl border border-gray-800 backdrop-blur-sm hover:border-quantum-purple transition duration-300">
+                    <div class="text-center mb-6">
+                        <div class="w-24 h-24 rounded-full bg-gray-800 mx-auto mb-4"></div>
+                        <h3 class="text-xl font-bold text-white">Ilakkiyan Karthikeyan Sobana</h3>
+                        <p class="text-gray-400">Technical Writer & UI Designer</p>
+                    </div>
+                    <p class="text-gray-300 text-center">
+                        Crafting intuitive user experiences and technical documentation
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Use Cases Section -->
+    <section id="use-cases" class="py-20 bg-[#0a0a1a] relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-20">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4 glow-text-blue">Real-World Impact</h2>
+                <div class="w-24 h-1 bg-quantum-blue mx-auto mb-6 glow-box-blue"></div>
+                <p class="text-xl text-gray-300 max-w-4xl mx-auto">
+                    QuantumLink is revolutionizing industries by making quantum computing accessible and practical
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-12">
+                <!-- Drug Discovery -->
+                <div class="feature-card p-8 bg-black bg-opacity-50 rounded-xl border border-gray-800 backdrop-blur-sm hover:border-quantum-purple transition duration-300">
+                    <div class="text-quantum-purple text-4xl mb-6">
+                        <i class="fas fa-vials"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-white">Drug Discovery</h3>
+                    <p class="text-gray-300 mb-6">
+                        Accelerate molecule simulation and drug design processes
+                    </p>
+                    <div class="flex items-center">
+                        <div class="text-quantum-blue text-xl mr-4">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div>
+                            <p class="text-gray-300">Reduce development time by 90%</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Supply Chain -->
+                <div class="feature-card p-8 bg-black bg-opacity-50 rounded-xl border border-gray-800 backdrop-blur-sm hover:border-quantum-green transition duration-300">
+                    <div class="text-quantum-green text-4xl mb-6">
+                        <i class="fas fa-truck"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-white">Supply Chain Optimization</h3>
+                    <p class="text-gray-300 mb-6">
+                        Optimize global logistics and inventory management
+                    </p>
+                    <div class="flex items-center">
+                        <div class="text-quantum-purple text-xl mr-4">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div>
+                            <p class="text-gray-300">Maximize efficiency and reduce costs</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Climate Modeling -->
+                <div class="feature-card p-8 bg-black bg-opacity-50 rounded-xl border border-gray-800 backdrop-blur-sm hover:border-quantum-blue transition duration-300">
+                    <div class="text-quantum-blue text-4xl mb-6">
+                        <i class="fas fa-cloud-rain"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-white">Climate Modeling</h3>
+                    <p class="text-gray-300 mb-6">
+                        Enhance weather prediction and climate research
+                    </p>
+                    <div class="flex items-center">
+                        <div class="text-quantum-green text-xl mr-4">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <div>
+                            <p class="text-gray-300">Global-scale simulations made possible</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Progress Timeline Section -->
+    <section id="progress" class="py-20 bg-gradient-to-b from-[#0a0a2a] to-[#0a0a1a] relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-20">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4 glow-text-green">Our Journey</h2>
+                <div class="w-24 h-1 bg-quantum-green mx-auto mb-6 glow-box-green"></div>
+                <p class="text-xl text-gray-300 max-w-4xl mx-auto">
+                    From idea to impact - our timeline of innovation
+                </p>
+            </div>
+
+            <div class="relative">
+                <!-- Timeline Line -->
+                <div class="absolute left-1/2 transform -translate-x-1/2 w-px h-full bg-gray-700"></div>
+
+                <!-- Timeline Items -->
+                <div class="grid md:grid-cols-2 gap-12">
+                    <!-- 2024 -->
+                    <div class="relative">
+                        <div class="absolute -left-8 -top-3 w-6 h-6 rounded-full bg-quantum-blue"></div>
+                        <div class="p-8 bg-black bg-opacity-50 rounded-xl border border-gray-800 backdrop-blur-sm">
+                            <h3 class="text-2xl font-bold mb-4 text-white">2024</h3>
+                            <div class="space-y-4">
+                                <div class="flex items-center">
+                                    <div class="text-quantum-purple text-xl mr-4">
+                                        <i class="fas fa-lightbulb"></i>
+                                    </div>
+                                    <div>
+                                        <p class="text-gray-300">Project conception at TKS Innovates</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center">
+                                    <div class="text-quantum-green text-xl mr-4">
+                                        <i class="fas fa-users"></i>
+                                    </div>
+                                    <div>
+                                        <p class="text-gray-300">Team formation and initial research</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2025 -->
+                    <div class="relative">
+                        <div class="absolute -right-8 -top-3 w-6 h-6 rounded-full bg-quantum-purple"></div>
+                        <div class="p-8 bg-black bg-opacity-50 rounded-xl border border-gray-800 backdrop-blur-sm">
+                            <h3 class="text-2xl font-bold mb-4 text-white">2025</h3>
+                            <div class="space-y-4">
+                                <div class="flex items-center">
+                                    <div class="text-quantum-blue text-xl mr-4">
+                                        <i class="fas fa-code"></i>
+                                    </div>
+                                    <div>
+                                        <p class="text-gray-300">Prototype development</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center">
+                                    <div class="text-quantum-green text-xl mr-4">
+                                        <i class="fas fa-network-wired"></i>
+                                    </div>
+                                    <div>
+                                        <p class="text-gray-300">First successful quantum network test</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2026 -->
+                    <div class="relative">
+                        <div class="absolute -left-8 -top-3 w-6 h-6 rounded-full bg-quantum-green"></div>
+                        <div class="p-8 bg-black bg-opacity-50 rounded-xl border border-gray-800 backdrop-blur-sm">
+                            <h3 class="text-2xl font-bold mb-4 text-white">2026</h3>
+                            <div class="space-y-4">
+                                <div class="flex items-center">
+                                    <div class="text-quantum-purple text-xl mr-4">
+                                        <i class="fas fa-industry"></i>
+                                    </div>
+                                    <div>
+                                        <p class="text-gray-300">Partnership agreements with quantum providers</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center">
+                                    <div class="text-quantum-blue text-xl mr-4">
+                                        <i class="fas fa-robot"></i>
+                                    </div>
+                                    <div>
+                                        <p class="text-gray-300">AI integration for smart routing</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2027 -->
+                    <div class="relative">
+                        <div class="absolute -right-8 -top-3 w-6 h-6 rounded-full bg-quantum-blue"></div>
+                        <div class="p-8 bg-black bg-opacity-50 rounded-xl border border-gray-800 backdrop-blur-sm">
+                            <h3 class="text-2xl font-bold mb-4 text-white">2027</h3>
+                            <div class="space-y-4">
+                                <div class="flex items-center">
+                                    <div class="text-quantum-green text-xl mr-4">
+                                        <i class="fas fa-globe"></i>
+                                    </div>
+                                    <div>
+                                        <p class="text-gray-300">Global launch of QuantumLink network</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center">
+                                    <div class="text-quantum-purple text-xl mr-4">
+                                        <i class="fas fa-rocket"></i>
+                                    </div>
+                                    <div>
+                                        <p class="text-gray-300">First commercial deployments</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Business Model Section -->
+    <section id="business" class="py-20 bg-gradient-to-b from-[#0a0a2a] to-[#0a0a1a] relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-20">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4 glow-text-purple">Business Model</h2>
+                <div class="w-24 h-1 bg-quantum-purple mx-auto mb-6 glow-box-purple"></div>
+                <p class="text-xl text-gray-300 max-w-4xl mx-auto">
+                    Our approach to making quantum computing accessible and profitable
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12">
+                <!-- Licensing Strategy -->
+                <div class="p-8 bg-black bg-opacity-50 rounded-xl border border-gray-800 backdrop-blur-sm">
+                    <h3 class="text-2xl font-bold mb-6 text-white">Licensing Strategy</h3>
+                    <div class="space-y-6">
+                        <div class="flex items-center">
+                            <div class="text-quantum-blue text-3xl mr-4">
+                                <i class="fas fa-key"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white mb-2">Enterprise License</h4>
+                                <p class="text-gray-300">
+                                    Comprehensive access to our quantum networking software for enterprise organizations
+                                </p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="text-quantum-purple text-3xl mr-4">
+                                <i class="fas fa-plug"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white mb-2">Integration Services</h4>
+                                <p class="text-gray-300">
+                                    Professional services for integrating QuantumLink with existing quantum infrastructure
+                                </p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="text-quantum-green text-3xl mr-4">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white mb-2">Security & Support</h4>
+                                <p class="text-gray-300">
+                                    Premium support and security services for mission-critical quantum computing operations
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Value Proposition -->
+                <div class="p-8 bg-black bg-opacity-50 rounded-xl border border-gray-800 backdrop-blur-sm">
+                    <h3 class="text-2xl font-bold mb-6 text-white">Value Proposition</h3>
+                    <div class="space-y-6">
+                        <div class="flex items-center">
+                            <div class="text-quantum-blue text-3xl mr-4">
+                                <i class="fas fa-rocket"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white mb-2">Accelerated Innovation</h4>
+                                <p class="text-gray-300">
+                                    Access to combined quantum computing power for faster research and development
+                                </p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="text-quantum-purple text-3xl mr-4">
+                                <i class="fas fa-hand-holding-usd"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white mb-2">Cost Efficiency</h4>
+                                <p class="text-gray-300">
+                                    Optimize resource usage and reduce infrastructure costs through shared quantum computing
+                                </p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="text-quantum-green text-3xl mr-4">
+                                <i class="fas fa-network-wired"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white mb-2">Network Effect</h4>
+                                <p class="text-gray-300">
+                                    Growing ecosystem of quantum computing resources and expertise
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-[#0a0a1a] relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4 glow-text-purple">Get Involved</h2>
+                <div class="w-24 h-1 bg-quantum-purple mx-auto mb-6 glow-box-purple"></div>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                    Join us in revolutionizing quantum computing
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="relative">
+                    <div class="p-8 bg-black bg-opacity-50 rounded-xl border border-gray-800 backdrop-blur-sm">
+                        <h3 class="text-2xl font-bold mb-6 text-white">Contact Us</h3>
+                        <form class="space-y-6">
+                            <div>
+                                <label for="name" class="block text-sm font-medium text-gray-300 mb-1">Your Name</label>
+                                <input type="text" id="name" class="w-full px-4 py-3 bg-gray-900 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-quantum-blue text-white">
+                            </div>
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-gray-300 mb-1">Email Address</label>
+                                <input type="email" id="email" class="w-full px-4 py-3 bg-gray-900 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-quantum-purple text-white">
+                            </div>
+                            <div>
+                                <label for="interest" class="block text-sm font-medium text-gray-300 mb-1">Interest</label>
+                                <select id="interest" class="w-full px-4 py-3 bg-gray-900 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-quantum-green text-white">
+                                    <option>Research Collaboration</option>
+                                    <option>Investor Inquiry</option>
+                                    <option>Technical Partnership</option>
+                                    <option>Other</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="message" class="block text-sm font-medium text-gray-300 mb-1">Message</label>
+                                <textarea id="message" rows="4" class="w-full px-4 py-3 bg-gray-900 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-quantum-blue text-white"></textarea>
+                            </div>
+                            <button type="submit" class="w-full px-6 py-4 bg-gradient-to-r from-quantum-purple to-quantum-blue text-white font-semibold rounded-lg glow-box-purple hover:opacity-90 transition duration-300">
+                                Send Message
+                            </button>
+                        </form>
+                    </div>
+                </div>
+                
+                <div class="space-y-8">
+                    <div class="p-8 bg-black bg-opacity-50 rounded-xl border border-gray-800 backdrop-blur-sm">
+                        <h3 class="text-2xl font-bold mb-4 text-white">Partnership Opportunities</h3>
+                        <p class="text-gray-300 mb-6">
+                            We're actively seeking strategic partners across industries to help shape the future of quantum computing.
+                        </p>
+                        <div class="space-y-4">
+                            <div class="flex items-center">
+                                <div class="text-quantum-blue text-xl mr-4">
+                                    <i class="fas fa-university"></i>
+                                </div>
+                                <p class="text-gray-300">Research Institutions</p>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="text-quantum-purple text-xl mr-4">
+                                    <i class="fas fa-industry"></i>
+                                </div>
+                                <p class="text-gray-300">Quantum Computing Companies</p>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="text-quantum-green text-xl mr-4">
+                                    <i class="fas fa-handshake"></i>
+                                </div>
+                                <p class="text-gray-300">Technical Partners</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="bg-black py-12 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4 glow-text-blue">QUANTUM <span class="glow-text-purple">LINK</span></h3>
+                    <p class="text-gray-400">
+                        Connecting the quantum world to create a network of unprecedented computational power.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4 text-white">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-400 hover:text-quantum-blue transition">Home</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-quantum-purple transition">About</a></li>
+                        <li><a href="#technology" class="text-gray-400 hover:text-quantum-green transition">Technology</a></li>
+                        <li><a href="#team" class="text-gray-400 hover:text-quantum-blue transition">Team</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4 text-white">Connect</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-quantum-blue text-xl transition">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-quantum-purple text-xl transition">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-quantum-green text-xl transition">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="pt-8 border-t border-gray-800">
+                <div class="md:flex md:items-center md:justify-between">
+                    <p class="text-gray-400 text-sm">
+                        © 2025 QuantumLink. All rights reserved.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
